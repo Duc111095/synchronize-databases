@@ -11,6 +11,30 @@
 		<File name="HibernateFile" fileName="${logFolder}/hibernate.log">
 			<PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n"/>
 		</File>
-		
+		<File name="GPCoderAppFile" fileName="${logFolder}/gpcoderApp.log">
+			<PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n"/> 
+		</File>
 	</Appenders>
+	<Loggers>
+		<Logger name="org.hibernate" level="info" additivity="false">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="HibernateFile" />
+		</Logger>
+		<Logger name="org.hibernate.SQL" level = "info" additivity="false">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="HibernateFile"/>
+		</Logger>
+		<Logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="HibernateFile"/>
+		</Logger>
+		<Logger name="com.gpcoder" level="debug" additivity="false">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="GPCoderAppFile"/>
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="GPCoderAppFile"/>
+		</Root>
+	</Loggers>
 </Configuration>
