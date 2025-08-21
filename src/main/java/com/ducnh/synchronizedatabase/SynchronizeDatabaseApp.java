@@ -17,7 +17,7 @@ public class SynchronizeDatabaseApp {
 	 * @throws InterruptedException 
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		try (SessionFactory sessionFactory = HibernateUtils.getSessionFactory()) {
+		try (SessionFactory sessionFactory = HibernateUtils.getSessionFactory("hibernate-mssql.cfg.xml")) {
 			Session session = sessionFactory.openSession();
 			
 			log.info("Statistics enabled = " + sessionFactory.getStatistics());

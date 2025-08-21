@@ -10,15 +10,14 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class HibernateUtils {
-	private static final SessionFactory sessionFactory = buildSessionFactory();
 	
 	private HibernateUtils() {
 		super();
 	}
 	
-	private static SessionFactory buildSessionFactory() {
+	private static SessionFactory buildSessionFactory(String configureFile) {
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-				.configure()
+				.configure(configureFile)
 				.build();
 		Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
 		return metadata.getSessionFactoryBuilder()
@@ -26,11 +25,11 @@ public class HibernateUtils {
 				.build();
 	}
 	
-	public static SessionFactory getSessionFactory() {
-		return sessionFactory;
+	public static SessionFactory getSessionFactory(String configureFile) {
+		return buildSessionFactory(configureFile);
 	}
 	
-	public static void close() {
-		getSessionFactory().close();
+	public static void close(String configureFile) {
+		getSessionFactory(configureFile).close();
 	}
 }
