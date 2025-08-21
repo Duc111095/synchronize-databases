@@ -3,19 +3,20 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<property name="connection.username">fbo</property>
+		<property name="connection.username">root</property>
 		<property name="connection.password">123456</property>
-		<property name="connection.driver_class"></property>
-		<property name="connection.url">jdbc:mysql://192.168.100.52:3306/n8n_db</property>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/springboot_app</property>
 	
 		<property name="connection.pool_size">4</property>
-		<property name="dialect"></property>
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		
 		<property name="current_session_context_class">thread</property>
 		<property name="jdbc.batch_size">10</property>
 		<property name="jdbc.order_inserts">true</property>
 		<property name="jdbc.order_updates">true</property>
 		<property name="generate_statistics">true</property>
+		<property name="show_sql">true</property>
 		
 		<mapping class="com.ducnh.synchronizedatabase.entities.Tag"/>
 	</session-factory>

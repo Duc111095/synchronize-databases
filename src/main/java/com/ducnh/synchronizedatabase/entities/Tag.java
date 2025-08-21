@@ -15,8 +15,7 @@ import lombok.Data;
 @Table
 public class Tag {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="tag_generator")
-	@SequenceGenerator(name="tag_generator", sequenceName="tag_id_seq", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column
