@@ -28,7 +28,7 @@
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref="HibernateFile"/>
 		</Logger>
-		<Logger name="com.gpcoder" level="debug" additivity="false">
+		<Logger name="com.ducnh.synchronizedatabase" level="info" additivity="false">
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref="GPCoderAppFile"/>
 		</Logger>
