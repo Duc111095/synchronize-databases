@@ -1,10 +1,6 @@
 package com.ducnh.synchronizedatabase;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
-import com.ducnh.synchronizedatabase.entities.Category;
-import com.ducnh.synchronizedatabase.utils.HibernateUtils;
+import com.ducnh.synchronizedatabase.service.PurchaseOrderService;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -17,22 +13,6 @@ public class SynchronizeDatabaseApp {
 	 * @throws InterruptedException 
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		try (SessionFactory sessionFactory = HibernateUtils.getSessionFactory("hibernate-mssql.cfg.xml")) {
-			Session session = sessionFactory.openSession();
-			
-			log.info("Statistics enabled = " + sessionFactory.getStatistics());
-			
-			// Begin a unit of work
-			session.beginTransaction();
-			
-			// Insert user
-			Category cat = new Category();
-			cat.setName("cat " + System.currentTimeMillis());
-			log.info("Cat id =" + session.save(cat));
-
-            session.getTransaction().commit();
-			log.info("Statistics enabled = " + sessionFactory.getStatistics());
-
-		}
+		PurchaseOrderService.synchronizeData("20250101", "20251231", "", "", 2666, "", 1);
 	}
 }
