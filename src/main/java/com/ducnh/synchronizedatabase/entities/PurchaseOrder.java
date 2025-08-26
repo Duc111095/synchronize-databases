@@ -99,6 +99,25 @@ public class PurchaseOrder {
 	@Column
 	public Date han_lo_nhap_tm;
 	
+	@Column
+	public Date ngay_xuat_tm;
+	
+	@Column(columnDefinition = "char(24)")
+	public String so_px_tm;
+	
+	@Column(columnDefinition = "char(48)")
+	public String ma_lo_xuat_tm;
+	
+	@Column
+	public Date han_lo_xuat_tm;
+	
+	@Column(columnDefinition = "varchar(16)")
+	public String ma_kh_xuat_tm;
+	
+	@Column(columnDefinition = "nvarchar(1024)")
+	@Nationalized
+	public String ten_kh_xuat_tm;
+	
 	@Column(columnDefinition = "char(8)")
 	public String ma_dvcs_nk;
 	
@@ -128,6 +147,28 @@ public class PurchaseOrder {
 	
 	@Column
 	public Date han_lo_nhap_nk;
+	
+	@Column
+	public Date ngay_xuat_nk;
+	
+	@Column(columnDefinition = "char(48)")
+	public String ma_lo_xuat_nk;
+	
+	@Column
+	public Date han_lo_xuat_nk;
+	
+	@Column(columnDefinition = "varchar(16)")
+	public String ma_kh_xuat_nk;
+	
+	@Column(columnDefinition = "nvarchar(1024)")
+	@Nationalized
+	public String ten_kh_xuat_nk;
+	
+	@Column
+	public int systotal;
+	
+	@Column
+	public int sysorder;
 	
 	@Override
 	public String toString() {

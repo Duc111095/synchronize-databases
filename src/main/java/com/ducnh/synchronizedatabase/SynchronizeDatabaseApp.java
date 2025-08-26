@@ -13,6 +13,6 @@ public class SynchronizeDatabaseApp {
 	 * @throws InterruptedException 
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		PurchaseOrderService.synchronizeData("20250101", "20251231", "", "", "", 2666, "", 1);
+		PurchaseOrderService.synchronizeData("20240101", "20251231", "", "", "", 2666, "", 1);
 	}
 }

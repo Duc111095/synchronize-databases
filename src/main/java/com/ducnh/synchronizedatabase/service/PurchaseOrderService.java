@@ -9,7 +9,6 @@ import org.hibernate.Transaction;
 import com.ducnh.synchronizedatabase.utils.HibernateUtils;
 import java.util.List;
 import com.ducnh.synchronizedatabase.entities.*;
-import java.io.*;
 
 import lombok.extern.log4j.Log4j2;
 
