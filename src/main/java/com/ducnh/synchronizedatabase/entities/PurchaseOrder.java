@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Index;
 
 import java.util.Date;
 import org.hibernate.annotations.Nationalized;
@@ -16,159 +17,159 @@ import java.math.BigDecimal;
 import lombok.Data;
 
 @Entity
-@Table(name = "total_purchase_order")
+@Table(name = "total_purchase_order", indexes = @Index(columnList = "so_ct_dt"))
 @Data
 public class PurchaseOrder {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long id;
+	private Long id;
 	
 	@Column(columnDefinition = "char(13)")
-	public String stt_rec;
+	private String stt_rec;
 	
 	@Column(columnDefinition = "char(3)")
-	public String stt_rec0;
+	private String stt_rec0;
 	
 	@Column(columnDefinition = "char(24)")
-	public String so_ct_dt;
+	private String so_ct_dt;
 	
 	@Column(columnDefinition = "char(8)")
-	public String ma_dvcs_dt;
+	private String ma_dvcs_dt;
 	
 	@Column(columnDefinition = "char(16)")
-	public String ma_nvbh;
+	private String ma_nvbh;
 	
 	@Column(length = 256)
-	public String ten_nvbh;
+	private String ten_nvbh;
 	
 	@Column(columnDefinition = "char(24)")
-	public String ma_vt;
+	private String ma_vt;
 	
 	@Column(length = 256)
-	public String ref;
+	private String ref;
 	
 	@Column(length = 2048)
 	@Nationalized
-	public String ten_vt;
+	private String ten_vt;
 	
 	@Column(columnDefinition = "char(24)")
-	public String nh_vt1;
+	private String nh_vt1;
 	
 	@Column(columnDefinition = "char(24)")
-	public String nh_vt2;
+	private String nh_vt2;
 	
 	@Column(columnDefinition = "char(24)")
-	public String nh_vt3;
+	private String nh_vt3;
 	
 	@Column(columnDefinition = "nchar(20)")
 	@Nationalized
-	public String dvt;
+	private String dvt;
 	
 	@Column
-	public Date ngay_dt;
+	private Date ngay_dt;
 	
 	@Column(columnDefinition = "varchar(16)")
-	public String ma_kh;
+	private String ma_kh;
 	
 	@Column(columnDefinition = "nvarchar(1024)")
 	@Nationalized
-	public String ten_kh;
+	private String ten_kh;
 	
 	@Column
-	public BigDecimal sl_dt;
+	private BigDecimal sl_dt;
 	
 	@Column
-	public BigDecimal sl_duyet_po;
+	private BigDecimal sl_duyet_po;
 	
 	@Column
-	public BigDecimal sl_nhap_tm;
+	private BigDecimal sl_nhap_tm;
 	
 	@Column
-	public BigDecimal sl_xuat_tm;
+	private BigDecimal sl_xuat_tm;
 	
 	@Column
-	public BigDecimal sl_cl_tm;
+	private BigDecimal sl_cl_tm;
 	
 	@Column
-	public Date ngay_nhap_tm;
+	private Date ngay_nhap_tm;
 	
 	@Column(columnDefinition = "char(48)")
-	public String ma_lo_nhap_tm;
+	private String ma_lo_nhap_tm;
 	
 	@Column
-	public Date han_lo_nhap_tm;
+	private Date han_lo_nhap_tm;
 	
 	@Column
-	public Date ngay_xuat_tm;
+	private Date ngay_xuat_tm;
 	
 	@Column(columnDefinition = "char(24)")
-	public String so_px_tm;
+	private String so_px_tm;
 	
 	@Column(columnDefinition = "char(48)")
-	public String ma_lo_xuat_tm;
+	private String ma_lo_xuat_tm;
 	
 	@Column
-	public Date han_lo_xuat_tm;
+	private Date han_lo_xuat_tm;
 	
 	@Column(columnDefinition = "varchar(16)")
-	public String ma_kh_xuat_tm;
+	private String ma_kh_xuat_tm;
 	
 	@Column(columnDefinition = "nvarchar(1024)")
 	@Nationalized
-	public String ten_kh_xuat_tm;
+	private String ten_kh_xuat_tm;
 	
 	@Column(columnDefinition = "char(8)")
-	public String ma_dvcs_nk;
+	private String ma_dvcs_nk;
 	
 	@Column
-	public BigDecimal sl_duyet_po_nk;
+	private BigDecimal sl_duyet_po_nk;
 	
 	@Column
-	public BigDecimal sl_tk_nk;
+	private BigDecimal sl_tk_nk;
 	
 	@Column
-	public BigDecimal sl_nhap_nk;
+	private BigDecimal sl_nhap_nk;
 	
 	@Column
-	public BigDecimal sl_xuat_nk;
+	private BigDecimal sl_xuat_nk;
 	
 	@Column
-	public BigDecimal sl_cl_nk;
+	private BigDecimal sl_cl_nk;
 	
 	@Column
-	public BigDecimal t_sl_cl;
+	private BigDecimal t_sl_cl;
 	
 	@Column
-	public Date ngay_nhap_nk;
+	private Date ngay_nhap_nk;
 	
 	@Column(columnDefinition = "char(48)")
-	public String ma_lo_nhap_nk;
+	private String ma_lo_nhap_nk;
 	
 	@Column
-	public Date han_lo_nhap_nk;
+	private Date han_lo_nhap_nk;
 	
 	@Column
-	public Date ngay_xuat_nk;
+	private Date ngay_xuat_nk;
 	
 	@Column(columnDefinition = "char(48)")
-	public String ma_lo_xuat_nk;
+	private String ma_lo_xuat_nk;
 	
 	@Column
-	public Date han_lo_xuat_nk;
+	private Date han_lo_xuat_nk;
 	
 	@Column(columnDefinition = "varchar(16)")
-	public String ma_kh_xuat_nk;
+	private String ma_kh_xuat_nk;
 	
 	@Column(columnDefinition = "nvarchar(1024)")
 	@Nationalized
-	public String ten_kh_xuat_nk;
+	private String ten_kh_xuat_nk;
 	
 	@Column
-	public int systotal;
+	private int systotal;
 	
 	@Column
-	public int sysorder;
+	private int sysorder;
 	
 	@Override
 	public String toString() {
